@@ -80,6 +80,18 @@ for m in Markers:
 
 if concordant+discordant == 0:
     print('WARNING: There are no shared markers between the tumor and the normal samples that meet the specified coverage requirements ({0})\nIs the coverage of your samples high enough?\nExiting...'.format(COVERAGE_THRESHOLD))
+    if opts.outfile == "-":
+        print(str(0))
+        print("Based on " + str(concordant+discordant) + "/" + str(len(Markers)) + " markers (coverage per marker threshold: " + str(COVERAGE_THRESHOLD) + " reads)")
+        print("Minimum mappinq quality: " + str(MMQ))
+        print("Minimum base quality: " + str(MBQ))
+    else:
+        outfile = open(opts.outfile, 'w')
+        outfile.write("Concordance: 0.00%\n")
+        outfile.write("Based on " + str(concordant+discordant) + "/" + str(len(Markers)) + " markers (coverage per marker threshold : " + str(COVERAGE_THRESHOLD) + " reads)\n")
+        outfile.write("Minimum mappinq quality: " + str(MMQ) + "\n")
+        outfile.write("Minimum base quality: " + str(MBQ) + "\n")
+        outfile.close()
     sys.exit(0)
 
 

@@ -3,8 +3,8 @@ Conpair: concordance and contamination estimator for tumor–normal pairs
 
 Conpair is a fast and robust method dedicated for human tumor-normal studies to perform concordance verification (= samples coming from the same individual), as well as cross-individual contamination level estimation in whole-genome and whole-exome sequencing experiments. Importantly, our method of estimating contamination in the tumor samples is not affected by copy number changes and is able to detect contamination levels as low as 0.1%.
 
-* Version: 0.2
-* Author: Ewa A Bergmann
+* Version: 0.2.1
+* Author: Ewa A Bergmann (minor update in present version by Mareike Janiak)
 * Contact: ewa.a.bergmann@gmail.com
 
 **Required input files:** two bam files (tumor, normal)
